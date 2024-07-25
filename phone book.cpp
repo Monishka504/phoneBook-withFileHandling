@@ -10,15 +10,15 @@ string Name, PhNo, Address;
 public:
 PhoneBook():Name(""), PhNo(""), Address(""){}
 
-setName(string name){
+void setName(string name){
 Name = name;
 }
 
-setPhNo(string phNo){
+void setPhNo(string phNo){
  PhNo = phNo;
 } 
 
-setAddress(string address){
+void setAddress(string address){
  Address = address;
 }
 
@@ -35,7 +35,7 @@ string getAddress(){
 }
 };
 
-addNo(PhoneBook ph){
+void addNo(PhoneBook ph){
 system("cls");
 string name, phNo, address;
 
@@ -51,7 +51,7 @@ ph.setName(name);
  cin>>address;
  ph.setAddress(address);
  
-ofstream outfile("D:/PhoneBook.txt", ios::app);
+ofstream outfile("phonebook.txt", ios::app);
 if(!outfile){
 cout<<"\tError: File Can't Open!"<<endl;
 }
@@ -64,13 +64,13 @@ cout<<"\tPhone Number Added To Phone Book!";
 Sleep(3000);
 }
 
-searchNo(){
+void searchNo(){
 	system("cls");
 string name;
 cout<<"\tEnter Name Of User: ";
 cin>>name;
 
-ifstream infile("D:/PhoneBook.txt");
+ifstream infile("phonebook.txt");
 if(!infile){
 cout<<"\tError: File Can't Open!"<<endl;
 }
